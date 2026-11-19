@@ -19,7 +19,7 @@ jobs:
           MSG: ${{ github.event.head_commit.message }}
         run: |
           printf COMMIT_SUBJECT=%s "${MSG}" | head -n 1 >> "$GITHUB_ENV"
-      - uses: rectalogic/notify-irc@v1
+      - uses: rectalogic/notify-irc@87377266635a9b7093c715a5ebb8a073b810cd9d
         env: { COLOR: "\x03", BLUE: "02", PURPLE: "06", ACTOR: "\x0315${{ github.actor }}\x03" }
         with:
           channel: ${{ vars.IRC_CHANNEL }}
